@@ -1,17 +1,17 @@
-#include "../include/Pasajeros.h" // Cambiado de Pasajero.h a Pasajeros.h
+#include "../include/Pasajeros.h" 
 #include <iostream>
-#include <limits> // Para std::numeric_limits
+#include <limits> 
 
-void agregarPasajero(std::vector<Pasajero>& lista) { // Función modificada para aceptar lista
+void agregarPasajero(std::vector<Pasajero>& lista) { 
     Pasajero p;
     std::cout << "--- Agregar Nuevo Pasajero ---\n";
     std::cout << "ID: ";
     while (!(std::cin >> p.id)) {
-        std::cout << "Entrada invalida. Por favor, ingrese un numero para el ID: ";
+        std::cout << "Entrada invalida. ";
         std::cin.clear();
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     }
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Limpiar buffer
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); 
 
     std::cout << "Nombre: ";
     std::getline(std::cin, p.nombre);
@@ -23,11 +23,11 @@ void agregarPasajero(std::vector<Pasajero>& lista) { // Función modificada para
     std::getline(std::cin, p.vueloReservado);
     std::cout << "Asiento: ";
     std::getline(std::cin, p.asiento);
-    p.checkIn = false; // Por defecto no ha hecho check-in
-    p.activo = true;   // Por defecto está activo
+    p.checkIn = false; 
+    p.activo = true;   
 
     lista.push_back(p);
-    std::cout << "Pasajero agregado con éxito a la memoria. Guarde para persistir.\n";
+    std::cout << "Pasajero agregado con éxito a la memoria. (Guarde para confirmar)\n";
 }
 
 void editarPasajero(std::vector<Pasajero>& lista) { // Función modificada

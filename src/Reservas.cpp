@@ -1,11 +1,10 @@
-#include "../include/Reservas.h" // <--- ¡Cambiar a plural si ese es el nombre de tu archivo .h!
+#include "../include/Reservas.h" 
 #include <iostream>
-#include <limits> // Para std::numeric_limits
+#include <limits> 
 
-// ELIMINAR OTRAS INCLUSIONES DE FSTREAM O VECTORES GLOBALES AQUÍ
-// ELIMINAR using namespace std; para mejor práctica (usar std::)
 
-void agregarReserva(std::vector<Reserva>& lista) { // Función modificada
+
+void agregarReserva(std::vector<Reserva>& lista) { 
     Reserva r;
     std::cout << "--- Agregar Nueva Reserva ---\n";
     std::cout << "Numero de reserva: ";
@@ -33,7 +32,7 @@ void agregarReserva(std::vector<Reserva>& lista) { // Función modificada
     std::cout << "Reserva agregada a la memoria. Guarde para persistir.\n";
 }
 
-void editarReserva(std::vector<Reserva>& lista) { // Función modificada
+void editarReserva(std::vector<Reserva>& lista) { 
     int num;
     std::cout << "--- Editar Reserva ---\n";
     std::cout << "Ingrese numero de reserva a editar: ";
@@ -59,7 +58,7 @@ void editarReserva(std::vector<Reserva>& lista) { // Función modificada
             std::getline(std::cin, r.duiPasajero);
             std::cout << "Nuevo codigo de vuelo (actual: " << r.codigoVuelo << "): ";
             std::getline(std::cin, r.codigoVuelo);
-            std::cout << "Reserva editada en memoria. Guarde para persistir.\n";
+            std::cout << "Reserva editada en memoria. (Guarde para confirmar).\n";
             encontrada = true;
             break;
         }
@@ -111,5 +110,3 @@ void consultarReservas(const std::vector<Reserva>& lista) { // Función modifica
     }
     std::cout << "----------------------------------\n";
 }
-
-// ELIMINAR funciones guardarReservas() y cargarReservas() de aquí, FileManager las manejará.

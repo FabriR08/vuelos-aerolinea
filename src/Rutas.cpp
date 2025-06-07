@@ -6,7 +6,7 @@
 void agregarRuta(std::vector<Ruta>& lista) { // Funcion modificada
     Ruta nueva;
     std::cout << "--- Agregar Nueva Ruta ---\n";
-    std::cout << "Código de ruta: ";
+    std::cout << "Codigo de ruta: ";
     while (!(std::cin >> nueva.codigo)) {
         std::cout << "Entrada invalida. Ingrese un numero: ";
         std::cin.clear();
@@ -20,7 +20,7 @@ void agregarRuta(std::vector<Ruta>& lista) { // Funcion modificada
     std::cout << "Destino: ";
     std::getline(std::cin, nueva.destino);
 
-    std::cout << "Duración (horas): ";
+    std::cout << "Duracion (horas): ";
     while (!(std::cin >> nueva.duracion)) {
         std::cout << "Entrada invalida. Ingrese un numero: ";
         std::cin.clear();
@@ -37,7 +37,7 @@ void agregarRuta(std::vector<Ruta>& lista) { // Funcion modificada
     nueva.activa = true;
 
     lista.push_back(nueva);
-    std::cout << "Ruta agregada a la memoria. Guarde para persistir.\n";
+    std::cout << "Ruta agregada a la memoria.\n";
 }
 
 void mostrarRutas(const std::vector<Ruta>& lista) { 
@@ -48,7 +48,7 @@ void mostrarRutas(const std::vector<Ruta>& lista) {
     }
     for (const Ruta& r : lista) {
         if (r.activa) {
-            std::cout << "Código: " << r.codigo
+            std::cout << "Codigo: " << r.codigo
                       << " | Origen: " << r.origen
                       << " | Destino: " << r.destino
                       << " | Duración: " << r.duracion << "h"
@@ -120,7 +120,7 @@ void eliminarRutaLogicamente(std::vector<Ruta>& lista) {
         if (r.codigo == codigo && r.activa) {
             r.activa = false;
             encontrada = true;
-            std::cout << "Ruta marcada como inactiva en memoria. Guarde para persistir.\n";
+            std::cout << "Ruta marcada como inactiva en memoria. )Guarde para confirmar).\n";
             break;
         }
     }
