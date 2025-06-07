@@ -2,21 +2,19 @@
 #define PASAJEROS_H
 
 #include <string>
-#include <vector> // Necesario para la declaración de std::vector
+#include <vector> 
 
-// Estructura del pasajero
-struct Pasajero { // La estructura se llama Pasajero (singular)
+struct Pasajero { 
     int id;
     std::string nombre;
     std::string dui;
     std::string nacionalidad;
     std::string vueloReservado;
     std::string asiento;
-    bool checkIn;  // true si ya hizo check-in
-    bool activo;   // true si está activo (no eliminado)
+    bool checkIn; 
+    bool activo;   
 };
 
-// Declaración de funciones (ahora aceptan el vector por referencia)
 void agregarPasajero(std::vector<Pasajero>& lista);
 void editarPasajero(std::vector<Pasajero>& lista);
 void eliminarPasajero(std::vector<Pasajero>& lista);

@@ -89,7 +89,7 @@ void eliminarVuelo(std::vector<Vuelo>& lista) {
     }
 }
 
-void consultarVuelos(const std::vector<Vuelo>& lista) { // Función modificada
+void consultarVuelos(const std::vector<Vuelo>& lista) { 
     std::cout << "\n--- Lista de Vuelos Activos ---\n";
     if (lista.empty()) {
         std::cout << "no hay vuelos registrados.\n";

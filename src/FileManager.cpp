@@ -5,7 +5,6 @@
 #include "../include/Tripulacion.h"
 #include "../include/Vuelos.h"
 
-// Implementación de la función auxiliar para dividir cadenas
 std::vector<std::string> FileManager::splitString(const std::string& s, char delimiter) {
     std::vector<std::string> tokens;
     std::string token;
@@ -16,7 +15,6 @@ std::vector<std::string> FileManager::splitString(const std::string& s, char del
     return tokens;
 }
 
-// Implementación general de guardarDatos (usará la función serializar_ de cada tipo)
 template<typename T>
 bool FileManager::guardarDatos(const std::string& nombreArchivo, const std::vector<T>& datos) {
     std::ofstream archivo("data/" + nombreArchivo);
@@ -25,37 +23,29 @@ bool FileManager::guardarDatos(const std::string& nombreArchivo, const std::vect
         return false;
     }
     for (const T& item : datos) {
-        // Esto requerirá una función serializar específica para cada tipo T
-        // Por ejemplo, para Pasajero, se llamaría serializarPasajero(item)
-        // Para simplificar, implementaremos las funciones de serialización y deserialización directamente en este .cpp
-        // y las llamaremos desde las funciones específicas de cada módulo (guardarPasajeros, cargarPasajeros, etc.)
+    
     }
     archivo.close();
     return true;
 }
 
-// Implementación general de cargarDatos (usará la función deserializar_ de cada tipo)
 template<typename T>
 std::vector<T> FileManager::cargarDatos(const std::string& nombreArchivo) {
     std::vector<T> datos;
     std::ifstream archivo("data/" + nombreArchivo);
     if (!archivo.is_open()) {
-        // std::cerr << "Advertencia: No se encontro el archivo " << nombreArchivo << ". Iniciando con datos vacios.\n";
-        return datos; // Retorna vector vacío si el archivo no existe o no se puede abrir
+        return datos; 
     }
     std::string linea;
     while (std::getline(archivo, linea)) {
-        // Esto requerirá una función deserializar específica para cada tipo T
-        // Por ejemplo, para Pasajero, se llamaría deserializarPasajero(linea)
     }
     archivo.close();
     return datos;
 }
 
 
-// --- Implementaciones de Serialización/Deserialización para cada estructura ---
 
-// Pasajero
+
 std::string FileManager::serializarPasajero(const Pasajero& p) {
     return std::to_string(p.id) + "|" +
            p.nombre + "|" +
@@ -203,7 +193,7 @@ std::string FileManager::serializarTripulante(const Tripulante& t) {
     for (size_t i = 0; i < t.vuelosAsignados.size(); ++i) {
         vuelosStr += t.vuelosAsignados[i];
         if (i < t.vuelosAsignados.size() - 1) {
-            vuelosStr += ","; // Separador para vuelos dentro de un tripulante
+            vuelosStr += ","; 
         }
     }
     return t.codigo + "|" +

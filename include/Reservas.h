@@ -4,13 +4,13 @@
 #include <string>
 #include <vector>
 
-struct Reserva { // La estructura se llama Reserva (singular)
+struct Reserva { 
     int numeroReserva;
     std::string fechaReserva;
     bool estadoPago;
     std::string duiPasajero;
     std::string codigoVuelo;
-    bool activo; // para eliminación lógica
+    bool activo; 
 };
 
 void agregarReserva(std::vector<Reserva>& lista);

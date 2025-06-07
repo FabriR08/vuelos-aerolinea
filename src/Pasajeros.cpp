@@ -59,7 +59,7 @@ void editarPasajero(std::vector<Pasajero>& lista) { // Función modificada
             std::cout << "¿Ha realizado Check-in? (s/n, actual: " << (p.checkIn ? "Si" : "No") << "): ";
             std::cin >> res;
             p.checkIn = (res == 's' || res == 'S');
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Limpiar buffer después de cin >> char
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             std::cout << "Pasajero actualizado en memoria. (Guarde para confirmar).\n";
             encontrado = true;
             break;

@@ -32,7 +32,6 @@ void editarTripulante(std::vector<Tripulante>& lista) {
             std::getline(std::cin, t.nombre);
             std::cout << "Nuevo rol (actual: " << t.rol << "): ";
             std::getline(std::cin, t.rol);
-            // nose si podrias agregar logica para editar vuelos asignados si es necesario
             std::cout << "Tripulante actualizado en memoria. (Guarde para confirmar).\n";
             encontrado = true;
             break;

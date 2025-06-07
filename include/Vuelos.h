@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 
-struct Vuelo { // La estructura se llama Vuelo (singular)
+struct Vuelo { 
     std::string codigo;
     std::string origen;
     std::string destino;

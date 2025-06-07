@@ -5,7 +5,7 @@
 #include <vector>
 #include <string>
 
-struct Ruta { // La estructura se llama Ruta (singular)
+struct Ruta { 
     int codigo;
     std::string origen;
     std::string destino;

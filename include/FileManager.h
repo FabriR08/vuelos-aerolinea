@@ -5,9 +5,8 @@
 #include <fstream>
 #include <vector>
 #include <string>
-#include <sstream> // Para std::stringstream
+#include <sstream> 
 
-// Declaraciones forward para las estructuras de los módulos
 struct Pasajero;
 struct Reserva;
 struct Ruta;
@@ -16,17 +15,12 @@ struct Vuelo;
 
 namespace FileManager {
 
-    // Plantilla para guardar un vector de objetos al archivo
-    // La serialización específica (cómo convertir el objeto a string) debe hacerse en una especialización de plantilla o en una función sobrecargada.
     template<typename T>
     bool guardarDatos(const std::string& nombreArchivo, const std::vector<T>& datos);
 
-    // Plantilla para cargar datos de un archivo a un vector de objetos
-    // La deserialización específica (cómo convertir una línea del archivo a un objeto) debe hacerse en una especialización de plantilla o en una función sobrecargada.
     template<typename T>
     std::vector<T> cargarDatos(const std::string& nombreArchivo);
 
-    // --- Especializaciones para cada estructura ---
 
     // Pasajero
     bool guardarPasajeros(const std::vector<Pasajero>& pasajeros);

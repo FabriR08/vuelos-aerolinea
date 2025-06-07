@@ -1,23 +1,21 @@
 #include <iostream>
 #include <vector>
-#include <limits> // Para std::numeric_limits
+#include <limits> 
 
-// Incluir los encabezados de los módulos
-#include "../include/Pasajeros.h"  // <--- ¡Asegúrate que sea plural!
-#include "../include/Reservas.h"   // <--- ¡Asegúrate que sea plural!
-#include "../include/Rutas.h"      // <--- ¡Asegúrate que sea plural!
-#include "../include/Tripulacion.h" // Este ya es singular
-#include "../include/Vuelos.h"     // <--- ¡Asegúrate que sea plural!
-#include "../include/FileManager.h" // Incluir el nuevo FileManager
+#include "../include/Pasajeros.h" 
+#include "../include/Reservas.h"   
+#include "../include/Rutas.h"      
+#include "../include/Tripulacion.h" 
+#include "../include/Vuelos.h"     
+#include "../include/FileManager.h" 
 
-// Declaración de los vectores globales para mantener los datos en memoria
 std::vector<Pasajero> globalPasajeros;
 std::vector<Reserva> globalReservas;
 std::vector<Ruta> globalRutas;
 std::vector<Tripulante> globalTripulacion;
 std::vector<Vuelo> globalVuelos;
 
-// Prototipos de funciones del menú
+// Prototipos de funciones del menu
 void mostrarMenuPrincipal();
 void gestionarPasajeros();
 void gestionarReservas();
@@ -43,9 +41,9 @@ int main() {
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         }
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Limpiar buffer
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
-        limpiarConsola(); // Limpiar consola después de cada interacción
+        limpiarConsola();
 
         switch (opcion) {
             case 1: gestionarVuelos(); break;
@@ -268,12 +266,11 @@ void gestionarTripulacion() {
     } while (opcion != 5);
 }
 
-// Función para limpiar la consola (adaptable para diferentes sistemas operativos)
 void limpiarConsola() {
     #ifdef _WIN32
         system("cls");
     #else
-        // Assume POSIX
+        
         system("clear");
     #endif
 }

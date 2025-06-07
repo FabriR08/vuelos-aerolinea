@@ -4,11 +4,11 @@
 #include <string>
 #include <vector>
 
-struct Tripulante { // La estructura se llama Tripulante (singular)
+struct Tripulante { 
     std::string codigo;
     std::string nombre;
-    std::string rol; // piloto, copiloto, azafata, etc.
-    std::vector<std::string> vuelosAsignados; // Esto se guardará como una cadena separada por comas
+    std::string rol; 
+    std::vector<std::string> vuelosAsignados; 
     bool activo = true;
 };
 
